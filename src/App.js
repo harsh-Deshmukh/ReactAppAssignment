@@ -20,6 +20,10 @@ class App extends Component {
         <h1>This is MY first react app</h1>
         <h4>Below is my team</h4>
         <Person name="Harshal" age="30" />
+         {/* we can put plaon text or any other componant within componnat as child
+         look below for sumit childeren is "HObbies is...." so we can display it like
+         refer Person componnat
+         */}
         <Person name="Sumit" age="29" >Hobbie is Cricket</Person>
         <Person name="Pragat" age="31" />
       </div>
