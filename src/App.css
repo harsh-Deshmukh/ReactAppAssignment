@@ -1,9 +1,5 @@
 .App {
   text-align: center;
-  width: 500px;
-  margin: auto;
-  margin-top: 50px;
-  color: red;
   border:10px blue;
   box-shadow: 2px 2px 2px #ccc;
 
