@@ -1,7 +1,14 @@
 import React from "react";
 
-const person = () => {
-  return <p>I am a Person Harshal</p>;
+/* props name will be anything.It is an object and person tag attribute
+/are properties are in that object so we can access it like  {props.name} and if it under the class 
+Then it will be like {this.props.name}*/
+const person = (props) => {
+  return (
+    <p>
+      I am a {props.name} and I am {props.age} years old
+    </p>
+  );
 };
 
 export default person;
