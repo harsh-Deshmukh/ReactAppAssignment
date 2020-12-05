@@ -1,11 +1,12 @@
 import React from "react";
+import "./Person.css";
 
 /* props name will be anything.It is an object and person tag attribute
 /are properties are in that object so we can access it like  {props.name} and if it under the class 
 Then it will be like {this.props.name}*/
 const person = (props) => {
   return (
-    <div>
+    <div className="Person">
       <p onClick={props.click}>
         I am a {props.name} and I am {props.age} years old </p>
       {/* you can put in same 'p' see above or you can 

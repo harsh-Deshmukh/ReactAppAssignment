@@ -4,6 +4,8 @@ import "./App.css";
 import Person from "./Person/Person";
 
 class App extends Component {
+
+
   // this state  variable only available in componant which are extending the class  Componat and that state varibake only accesible only in same componant
   //where it is created so Best thing about it is ,when the values of state changes it totally render that componanat. so user can see updatred values.
   state = {
@@ -39,11 +41,21 @@ class App extends Component {
     });
   };
   render() {
+    // inline css
+    const style = {
+      backgroundColor: 'crimson',
+      padding: '16px',
+      fontSize: '16px',
+      fontFamily: 'Aerial',
+      fontWeight: 'bold',
+      color: "white",
+    }
     return (
       <div className="App">
         <h1>This is MY first react app</h1>
         <h4>Below is my team</h4>
-        <button onClick={this.switchNameHandler.bind(this, "Harshal Deshmukh")}>Click to change state</button>
+        <button onClick={this.switchNameHandler.bind(this, "Harshal Deshmukh")}
+          style={style}>Switch Name</button>
 
         <Person
           name={this.state.persons[0].name}
