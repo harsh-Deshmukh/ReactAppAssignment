@@ -5,11 +5,11 @@ import React from "react";
 Then it will be like {this.props.name}*/
 const person = (props) => {
   return (
-    <p>
+    <p onClick={props.click}>
       I am a {props.name} and I am {props.age} years old {props.children}
       {/* you can put in same 'p' see above or you can 
           do like below */}
-       
+
     </p>
   );
 };
