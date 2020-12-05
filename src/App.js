@@ -1,4 +1,4 @@
-import React, {Component } from "react";
+import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Person from "./Person/Person";
@@ -12,13 +12,26 @@ class App extends Component {
       { name: "Sumit", age: 29 },
       { name: "Pragat", age: 31 },
     ],
+    otherPerson: "other person"
   };
+
+  switchNameHandler = () => {
+    // this.state.persons[0].name = 'Harshal Deshmukh';  //these will not work becoz react will not recognized that 
+    //used below method for chnage state and  this will chk which part need to be change depends on what we passed by comparing state var actual state.
+    this.setState({
+      persons: [
+        { name: "Harshal Deshmukh", age: 31 },
+        { name: "Sumit", age: 29 },
+        { name: "Pragat", age: 30 },
+      ]
+    })
+  }
   render() {
     return (
       <div className="App">
         <h1>This is MY first react app</h1>
         <h4>Below is my team</h4>
-        <button>Submit</button>
+        <button onClick={this.switchNameHandler}>Click to change state</button>
 
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
 
