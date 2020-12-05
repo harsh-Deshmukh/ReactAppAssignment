@@ -26,12 +26,24 @@ class App extends Component {
       ],
     });
   };
+
+  onChangeNameHandler = (event) => {
+    // this.state.persons[0].name = 'Harshal Deshmukh';  //these will not work becoz react will not recognized that
+    //Here we are chnageing the 2nd obje name prop on chnage event and evnet.target ppinting to input box and event is the name of event which gets occured
+    this.setState({
+      persons: [
+        { name: "Harshal", age: 31 },
+        { name: event.target.value, age: 29 },
+        { name: "Pragat", age: 30 },
+      ],
+    });
+  };
   render() {
     return (
       <div className="App">
         <h1>This is MY first react app</h1>
         <h4>Below is my team</h4>
-        <button onClick={this.switchNameHandler.bind(this,"Harshal Deshmukh")}>Click to change state</button>
+        <button onClick={this.switchNameHandler.bind(this, "Harshal Deshmukh")}>Click to change state</button>
 
         <Person
           name={this.state.persons[0].name}
@@ -46,7 +58,8 @@ class App extends Component {
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this,"Akhiliz")}
+          click={this.switchNameHandler.bind(this, "Akhiliz")}
+          changed={this.onChangeNameHandler}
         >
           {" "}
           Hobbie is Cricket
