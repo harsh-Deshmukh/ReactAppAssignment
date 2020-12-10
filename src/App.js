@@ -54,6 +54,37 @@ class App extends Component {
       fontWeight: "bold",
       color: "white",
     };
+
+    let persons = null;
+    if (this.state.showPerson) {
+      persons = (<div>
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+        />
+
+        {/* we can put plaon text or any other componant within componnat as child
+         look below for sumit childeren is "HObbies is...." so we can display it like
+         refer Person
+         */}
+
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+          click={this.switchNameHandler.bind(this, "Akhiliz")}
+          changed={this.onChangeNameHandler}>
+
+          Hobbie is Cricket
+              <p>AND Click HERE / TYPE TO CHNAGE NAME</p>
+        </Person>
+
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age}
+        />
+      </div>
+      )
+    }
     return (
       <div className="App">
         <h1>This is MY first react app</h1>
@@ -61,35 +92,9 @@ class App extends Component {
         <button onClick={this.togglePersons} style={style}>
           Toggle Persons
         </button>
-        { this.state.showPerson ?
-          <div>
-            <Person
-              name={this.state.persons[0].name}
-              age={this.state.persons[0].age}
-            />
-
-            {/* we can put plaon text or any other componant within componnat as child
-         look below for sumit childeren is "HObbies is...." so we can display it like
-         refer Person
-         */}
-
-            <Person
-              name={this.state.persons[1].name}
-              age={this.state.persons[1].age}
-              click={this.switchNameHandler.bind(this, "Akhiliz")}
-              changed={this.onChangeNameHandler}
-            >
-              {" "}
-            Hobbie is Cricket 
-              <p>AND Click HERE / TYPE TO CHNAGE NAME</p>
-          </Person>
-
-            <Person
-              name={this.state.persons[2].name}
-              age={this.state.persons[2].age}
-            />
-          </div> : null }
+        {persons}
       </div>
+
     );
   }
 }

@@ -24,7 +24,7 @@ const person = (props) => {
       
       */}
 
-      <input type="text" onChange={props.changed} value={props.name}></input>
+      <input type="text" onChange={props.changed} value={props.name} ></input>
     </div>
   );
 };
