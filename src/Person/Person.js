@@ -12,6 +12,7 @@ const person = (props) => {
       {/* you can put in same 'p' see above or you can 
           do like below */}
       <p>{props.children}</p>
+      
 
       {/* 
     our goal is to change above name when user type in below text box  This is called as One way binding
