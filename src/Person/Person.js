@@ -7,12 +7,12 @@ Then it will be like {this.props.name}*/
 const person = (props) => {
   return (
     <div className="Person">
-      <p onClick={props.click}>
+      <p>
         I am a {props.name} and I am {props.age} years old </p>
       {/* you can put in same 'p' see above or you can 
           do like below */}
       <p>{props.children}</p>
-      
+
 
       {/* 
     our goal is to change above name when user type in below text box  This is called as One way binding
@@ -23,8 +23,18 @@ const person = (props) => {
       else use defaultValue as attribute but you well nt get updated last value when you click on button in this app .
       
       */}
-
-      <input type="text" onChange={props.changed} value={props.name} ></input>
+      <div className="input_area">
+        <div>
+      <label htmlFor="{ props.id}" value="BY Ib=ndex">By List Index: </label>
+      <input id={ props.id} type="text" onChange={props.changByIndex} value={props.name} ></input>
+     </div>
+        <div>
+      <label htmlFor="{props.id}" value="BY Ib=ndex">BY Person Id: </label>
+          <input id={props.id} type="text" onChange={props.changeById} value={props.name}></input>
+        </div>
+      </div>
+      <button onClick={props.click}>Delete</button>
+      
     </div>
   );
 };
