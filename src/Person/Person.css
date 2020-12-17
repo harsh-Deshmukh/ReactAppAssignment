@@ -11,4 +11,9 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: auto;
+}
+
+.input_area input{
+  width: 70%;
 }

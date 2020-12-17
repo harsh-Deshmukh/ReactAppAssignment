@@ -33,3 +33,10 @@
     transform: rotate(360deg);
   }
 }
+.red {
+  color: rgb(142, 104, 211);
+}
+.bold {
+  text-transform: capitalize;
+  font-weight: bold;
+}

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Radium, { StyleRoot } from 'radium';
 import Person from "./Person/Person";
-import person from "./Person/Person";
 
 class App extends Component {
   // this state  variable only available in componant which are extending the class  Componat and that state varibake only accesible only in same componant
@@ -82,11 +82,20 @@ class App extends Component {
     const style = {
       backgroundColor: "crimson",
       padding: "16px",
-      fontSize: "16px",
+      fontSize: "20px",
       fontFamily: "Aerial",
       fontWeight: "bold",
       color: "white",
+      cursor: "pointer",
+      borderRadius: "10px",
+      border: "1px solid white",
+      [':hover']: {
+        backgroundColor: "orange",
+        color: "brown"
+      }
+
     };
+
 
     let persons = null;
     if (this.state.showPerson) {
@@ -111,20 +120,32 @@ class App extends Component {
 
           </div>
         )
+      style.backgroundColor = "green";
+      style[':hover'] = {
+        backgroundColor: "red",
+        color: "white"
+      }
 
     }
+    const textStyle = [];
+    if (this.state.persons.length === 2) {
+      textStyle.push('red');
+    }
+    if (this.state.persons.length === 1) {
+      textStyle.push('bold');
+    }
     return (
-      <div className="App">
-        <h1>This is MY first react app</h1>
-        <h4>Below is my team</h4>
-        <button onClick={this.togglePersons} style={style}>
-          Toggle Persons
+      <StyleRoot>
+        <div className="App">
+          <h1 className={textStyle.join(' ')}>This Is My First React App</h1>
+          <h4>Below is my team</h4>
+          <button onClick={this.togglePersons} style={style}>
+            Toggle Persons
         </button>
-        {persons}
-      </div>
-
+          {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
-
-export default App;
+export default Radium(App);
